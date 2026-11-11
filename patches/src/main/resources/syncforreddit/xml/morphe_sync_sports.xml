@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceCategory xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListPreference
+        android:key="morphe_sync_sports_interval"
+        android:title="Sports mode interval"
+        android:dialogTitle="Sports mode interval"
+        android:summary="Countdown between comment refreshes. Applies when the next countdown starts."
+        android:entries="@array/morphe_sync_sports_labels"
+        android:entryValues="@array/morphe_sync_sports_values"
+        android:defaultValue="15" />
+</PreferenceCategory>
+
