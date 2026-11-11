@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="morphe_sync_sports_labels">
+        <item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>15 seconds</item>
+    </array>
+    <array name="morphe_sync_sports_values">
+        <item>@string/morphe_sync_sports_value_5</item>
+        <item>@string/morphe_sync_sports_value_10</item>
+        <item>@string/morphe_sync_sports_value_15</item>
+    </array>
+</resources>

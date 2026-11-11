@@ -1,26 +1,49 @@
 {
   "branches": [
-    "main",
-    {
-      "name": "dev",
-      "prerelease": true
-    }
+    "main"
   ],
   "plugins": [
     [
-      "@semantic-release/commit-analyzer", {
+      "@semantic-release/commit-analyzer",
+      {
         "releaseRules": [
-          { "type": "build", "scope": "Needs bump", "release": "patch" }
+          {
+            "breaking": true,
+            "release": "minor"
+          },
+          {
+            "type": "feat",
+            "release": "minor"
+          },
+          {
+            "type": "fix",
+            "release": "minor"
+          },
+          {
+            "type": "perf",
+            "release": "minor"
+          },
+          {
+            "type": "refactor",
+            "release": "minor"
+          },
+          {
+            "type": "build",
+            "scope": "Needs bump",
+            "release": "minor"
+          }
         ]
       }
     ],
     "@semantic-release/release-notes-generator",
     [
-      "@MorpheApp/changelog", {
+      "@MorpheApp/changelog",
+      {
         "releaseJson": {
           "path": "patches-bundle.json",
-          "downloadUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/v${version}/patches-${version}.mpp",
-          "signatureUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/v${version}/patches-${version}.mpp.asc"
+          "downloadUrlTemplate": "https://github.com/${owner}/${repo}/releases/download/addons-v${version}/patches-${version}.mpp",
+          "signatureUrlTemplate": "",
+          "publicKeyPath": "morphe-signing.pub"
         }
       }
     ],
@@ -28,7 +51,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json"
+        "prepareCmd": "./gradlew generatePatchesList && jq '.version=\"${nextRelease.version}\"' patches-list.json > patches-list.json.tmp && mv patches-list.json.tmp patches-list.json"
       }
     ],
     [
@@ -53,13 +76,7 @@
         ],
         "successComment": false
       }
-    ],
-    [
-      "@saithodev/semantic-release-backmerge",
-      {
-        "backmergeBranches": [{"from": "main", "to": "dev"}],
-        "clearWorkspace": true
-      }
     ]
-  ]
+  ],
+  "tagFormat": "addons-v${version}"
 }

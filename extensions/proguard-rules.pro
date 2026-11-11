@@ -13,3 +13,6 @@
 }
 -dontwarn java.lang.reflect.AnnotatedType
 -dontwarn javax.lang.model.element.Modifier
+
+# Standalone Sync add-on hooks are invoked from patched app bytecode.
+-keep class app.systemad.sports.** { *; }

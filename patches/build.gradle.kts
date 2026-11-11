@@ -4,12 +4,12 @@ val httpLibraryResources by configurations.creating
 
 patches {
     about {
-        name = "Patcheddit"
-        description = "Morphe Patches for Reddit"
-        source = "git@github.com:wchill/patcheddit.git"
+        name = "Systemad Sync Add-ons"
+        description = "Sync add-ons for use alongside original Patcheddit"
+        source = "git@github.com:Systemad/patcheddit.git"
         author = "wchill"
         contact = "w@chill.dev"
-        website = "https://github.com/wchill/patcheddit"
+        website = "https://github.com/Systemad/patcheddit"
         license = "Additional conditions under GPL section 7 apply: attribution and project name restrictions. See LICENSE file."
     }
 }
@@ -95,11 +95,27 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/wchill/patcheddit")
+            url = uri("https://maven.pkg.github.com/Systemad/patcheddit")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
             }
         }
     }
+}
+// Keep upstream sources available, but publish only this fork's add-on patches.
+tasks.jar {
+    eachFile {
+        if (path.startsWith("extensions/") && path.endsWith(".mpe") && path != "extensions/sports.mpe") exclude()
+        if (path.startsWith("app/morphe/patches/") &&
+            !path.startsWith("app/morphe/patches/reddit/customclients/sync/syncforreddit/misc/sports/") &&
+            !path.startsWith("app/morphe/patches/reddit/customclients/AppCompatibility") &&
+            !path.startsWith("app/morphe/patches/all/misc/resources/AddResourcesPatch")) exclude()
+    }
+}
+
+
+// Generate discovery metadata from the shipped bundle, not all retained source classes.
+tasks.named<JavaExec>("generatePatchesList") {
+    classpath = files(tasks.jar.flatMap { it.archiveFile }) + configurations.runtimeClasspath.get()
 }

@@ -1,3 +1,5 @@
+> This fork publishes **Systemad Sync Add-ons**: only the Sports mode interval patch is exposed. Inherited patch sources are retained but excluded from the published bundle. Select original Patcheddit's **Sync Morphe settings** alongside this add-on. The add-on reuses that menu and does not install a second copy of its settings infrastructure.
+
 # 👋🧩 Patcheddit
 
 Morphe compatible patches for third party Reddit apps.
@@ -58,6 +60,8 @@ In addition, patches for some apps contain additional features that were not pre
 * Imgur images and albums are automatically loaded from the Wayback Machine if a 404 is detected.
 * The context menu for posts now contains additional options for opening a site in the Wayback Machine or archive.is. This is useful for if the undeleting functionality has issues or you want to bypass a content paywall.
 
+### Sync for Reddit
+* **Sports mode interval** adds **Sports mode interval** under **Settings > Morphe**, with 5, 10, and 15 second countdowns (default: 15). Enable Sports mode from the comments actions to start refreshing. The settings cog beside Refresh in the green Sports mode strip opens the same interval choices and shares the Morphe setting. Interval changes apply when the next countdown starts; request time is additional to the countdown.
 ### reddit is fun
 * Imgur album URLs are rewritten to use the newer format.
 * Enables pro features without ads.
@@ -204,6 +208,8 @@ You can find the contribution guidelines [here](CONTRIBUTING.md).
 
 To build Patcheddit,
 you can follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
+
+Release builds run through GitHub Actions and use the repository's configured Morphe signing key.
 
 ## 📜 License
 
