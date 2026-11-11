@@ -16,12 +16,11 @@ private val sportsIntervalResources = resourcePatch(default = false) {
     execute {
         checkNotNull(inputStreamFromBundledResource("syncforreddit", "values/morphe_sync_sports.xml")).use { input ->
             document(input).use { source ->
-                document("res/values/arrays.xml").use { target ->
-                    val arrays = source.documentElement.childNodes
-                    for (index in 0 until arrays.length) {
-                        val array = arrays.item(index)
-                        if (array.nodeType == org.w3c.dom.Node.ELEMENT_NODE) {
-                            target.documentElement.appendChild(target.importNode(array, true))
+                for ((tag, path) in listOf("string" to "strings.xml", "array" to "arrays.xml")) {
+                    document("res/values/$path").use { target ->
+                        val entries = source.getElementsByTagName(tag)
+                        for (index in 0 until entries.length) {
+                            target.documentElement.appendChild(target.importNode(entries.item(index), true))
                         }
                     }
                 }

@@ -54,7 +54,13 @@ public final class SportsModeInterval {
         refreshParams.removeRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         refreshParams.addRule(RelativeLayout.LEFT_OF, settings.getId());
         refresh.setLayoutParams(refreshParams);
-        settings.setOnClickListener(view -> showIntervalDialog(context));
+        settings.setOnClickListener(view -> {
+            try {
+                showIntervalDialog(context);
+            } catch (Exception exception) {
+                android.util.Log.e("SportsModeInterval", "showIntervalDialog failure", exception);
+            }
+        });
     }
 
     private static void showIntervalDialog(Context context) {
@@ -66,7 +72,7 @@ public final class SportsModeInterval {
         String current = preferences.getString(INTERVAL_KEY, "15");
         int selected = 2;
         for (int i = 0; i < values.length; i++) {
-            if (values[i].equals(current)) selected = i;
+            if (current != null && current.equals(values[i])) selected = i;
         }
         new AlertDialog.Builder(context)
                 .setTitle("Sports mode interval")
