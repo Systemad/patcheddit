@@ -1,8 +1,8 @@
 {
-  "created_at": "2026-11-11T14:27:09",
-  "description": "# [2.2.0](https://github.com/Systemad/patcheddit/compare/v2.1.0...v2.2.0) (2026-11-11)\n\n\n### Features\n\n* **syncforreddit:** add sports interval controls and signing ([ab9ddec](https://github.com/Systemad/patcheddit/commit/ab9ddec56d77e369cd40e874e9465e8ffb62317a))",
-  "download_url": "https://github.com/Systemad/patcheddit/releases/download/v2.2.0/patches-2.2.0.mpp",
+  "created_at": "2026-11-11T16:16:45",
+  "description": "# [2.3.0](https://github.com/Systemad/patcheddit/compare/v2.2.0...v2.3.0) (2026-11-11)\n\n\n### Features\n\n* **sync:** make sports interval a standalone add-on ([2636029](https://github.com/Systemad/patcheddit/commit/2636029363163d63724ab5e97ab144ff7b75a668))",
+  "download_url": "https://github.com/Systemad/patcheddit/releases/download/v2.3.0/patches-2.3.0.mpp",
   "signature_download_url": "",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "public_key": "V9/K3B+Q+B+GIjvEZDFtl38YlwmJXZV+PT5YwezVZs0="
 }

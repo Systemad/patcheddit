@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/Systemad/patcheddit/compare/v2.2.0...v2.3.0) (2026-11-11)
+
+
+### Features
+
+* **sync:** make sports interval a standalone add-on ([2636029](https://github.com/Systemad/patcheddit/commit/2636029363163d63724ab5e97ab144ff7b75a668))
+
 # [2.2.0](https://github.com/Systemad/patcheddit/compare/v2.1.0...v2.2.0) (2026-11-11)
 
 
