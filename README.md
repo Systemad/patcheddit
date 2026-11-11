@@ -59,7 +59,7 @@ In addition, patches for some apps contain additional features that were not pre
 * The context menu for posts now contains additional options for opening a site in the Wayback Machine or archive.is. This is useful for if the undeleting functionality has issues or you want to bypass a content paywall.
 
 ### Sync for Reddit
-* **Sports mode interval** adds **Sports mode interval** under **Settings > Morphe**, with 5, 10, and 15 second countdowns (default: 15). Enable Sports mode from the comments actions to start refreshing. Interval changes apply when the next countdown starts; request time is additional to the countdown.
+* **Sports mode interval** adds **Sports mode interval** under **Settings > Morphe**, with 5, 10, and 15 second countdowns (default: 15). Enable Sports mode from the comments actions to start refreshing. The settings cog beside Refresh in the green Sports mode strip opens the same interval choices and shares the Morphe setting. Interval changes apply when the next countdown starts; request time is additional to the countdown.
 ### reddit is fun
 * Imgur album URLs are rewritten to use the newer format.
 * Enables pro features without ads.

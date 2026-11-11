@@ -131,3 +131,6 @@ local.properties
 
 # Local APK analysis tools and decompiled output
 /workbench/
+
+# Private patch-bundle signing key
+/morphe-signing.key

@@ -6,10 +6,10 @@ patches {
     about {
         name = "Patcheddit"
         description = "Morphe Patches for Reddit"
-        source = "git@github.com:wchill/patcheddit.git"
+        source = "git@github.com:Systemad/patcheddit.git"
         author = "wchill"
         contact = "w@chill.dev"
-        website = "https://github.com/wchill/patcheddit"
+        website = "https://github.com/Systemad/patcheddit"
         license = "Additional conditions under GPL section 7 apply: attribution and project name restrictions. See LICENSE file."
     }
 }
@@ -95,7 +95,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/wchill/patcheddit")
+            url = uri("https://maven.pkg.github.com/Systemad/patcheddit")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
