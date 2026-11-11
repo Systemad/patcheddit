@@ -1,3 +1,5 @@
+> This fork publishes **Systemad Sync Add-ons**: only the Sports mode interval patch is exposed. Inherited patch sources are retained but excluded from the published bundle. Select original Patcheddit's **Sync Morphe settings** alongside this add-on. The add-on reuses that menu and does not install a second copy of its settings infrastructure.
+
 # 👋🧩 Patcheddit
 
 Morphe compatible patches for third party Reddit apps.
@@ -206,6 +208,8 @@ You can find the contribution guidelines [here](CONTRIBUTING.md).
 
 To build Patcheddit,
 you can follow the [Morphe documentation](https://github.com/MorpheApp/morphe-documentation).
+
+Release builds run through GitHub Actions and use the repository's configured Morphe signing key.
 
 ## 📜 License
 

@@ -1,4 +1,4 @@
-package app.morphe.extension.syncforreddit;
+package app.systemad.sports;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -7,10 +7,11 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
-import app.morphe.extension.shared.Utils;
-import app.morphe.extension.shared.settings.PatchSettings;
+import android.preference.PreferenceManager;
+
 
 public final class SportsModeInterval {
+    private static Context appContext;
     private static final String INTERVAL_KEY = "morphe_sync_sports_interval";
     private static final String BUTTON_TAG = "morphe_sports_settings";
 
@@ -27,6 +28,7 @@ public final class SportsModeInterval {
 
     private static void attachSettingsButton(View sportsView) {
         Context context = sportsView.getContext();
+        appContext = context.getApplicationContext();
         int wrapperId = context.getResources().getIdentifier("sports_wrapper", "id", context.getPackageName());
         int refreshId = context.getResources().getIdentifier("sports_refresh", "id", context.getPackageName());
         View wrapperView = sportsView.findViewById(wrapperId);
@@ -60,7 +62,7 @@ public final class SportsModeInterval {
         int valuesId = context.getResources().getIdentifier("morphe_sync_sports_values", "array", context.getPackageName());
         String[] labels = context.getResources().getStringArray(labelsId);
         String[] values = context.getResources().getStringArray(valuesId);
-        SharedPreferences preferences = PatchSettings.preferences(context);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         String current = preferences.getString(INTERVAL_KEY, "15");
         int selected = 2;
         for (int i = 0; i < values.length; i++) {
@@ -78,8 +80,8 @@ public final class SportsModeInterval {
 
     /** Read on each countdown so changes also apply to an already open thread. */
     public static int getInterval(int original) {
-        if (!Utils.isContextSet()) return original;
-        String value = PatchSettings.preferences(Utils.getContext())
+        if (appContext == null) return original;
+        String value = PreferenceManager.getDefaultSharedPreferences(appContext)
                 .getString(INTERVAL_KEY, "15");
         if (value == null) return 15;
         switch (value) {
@@ -92,3 +94,4 @@ public final class SportsModeInterval {
         }
     }
 }
+
