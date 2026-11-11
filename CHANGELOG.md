@@ -1,3 +1,10 @@
+## [2.3.1](https://github.com/Systemad/patcheddit/compare/v2.3.0...v2.3.1) (2026-11-11)
+
+
+### Bug Fixes
+
+* **sync:** encode sports interval choices as strings ([ad1aed0](https://github.com/Systemad/patcheddit/commit/ad1aed0e2adf19f40a2d07a95140ec44a1edd75d))
+
 # [2.3.0](https://github.com/Systemad/patcheddit/compare/v2.2.0...v2.3.0) (2026-11-11)
 
 
