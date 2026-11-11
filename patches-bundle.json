@@ -1,6 +1,6 @@
 {
-  "created_at": "2026-11-11T16:30:56",
-  "description": "Initial standalone Sports mode add-on release.",
+  "created_at": "2026-11-11T19:57:25",
+  "description": "# [0.1.0](https://github.com/Systemad/patcheddit/compare/addons-v0.0.0...addons-v0.1.0) (2026-11-11)\n\n\n### Features\n\n* **sync:** add standalone sports mode interval controls ([3a12dc9](https://github.com/Systemad/patcheddit/commit/3a12dc909b89b2bfd861fcdc52d40429dfd84d03))",
   "download_url": "https://github.com/Systemad/patcheddit/releases/download/addons-v0.1.0/patches-0.1.0.mpp",
   "signature_download_url": "",
   "version": "0.1.0",
