@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/Systemad/patcheddit/compare/v2.1.0...v2.2.0) (2026-11-11)
+
+
+### Features
+
+* **syncforreddit:** add sports interval controls and signing ([ab9ddec](https://github.com/Systemad/patcheddit/commit/ab9ddec56d77e369cd40e874e9465e8ffb62317a))
+
 # [2.1.0](https://github.com/wchill/patcheddit/compare/v2.0.3...v2.1.0) (2026-11-07)
 
 
